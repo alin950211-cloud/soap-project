@@ -1,0 +1,70 @@
+// 找出任務勾選框與進度顯示
+const checkboxes = [
+    ...document.querySelectorAll("[data-habit]")
+];
+
+const progress = document.querySelector("#habit-progress");
+const statusText = document.querySelector("#habit-status");
+const resetButton = document.querySelector("#reset-habits");
+
+const storageKey = "soap-daily-habits";
+
+// 只有生活任務頁才執行
+if (checkboxes.length && progress && statusText && resetButton) {
+    // 讀取之前的勾選記錄
+    try {
+        const saved = JSON.parse(
+            localStorage.getItem(storageKey) || "[]"
+        );
+
+        if (Array.isArray(saved)) {
+            checkboxes.forEach((checkbox, index) => {
+                checkbox.checked = saved[index] === true;
+            });
+        }
+    } catch {
+        // 無法讀取記錄時，仍可正常勾選
+    }
+
+    function updateProgress() {
+        const completed = checkboxes.filter(
+            checkbox => checkbox.checked
+        ).length;
+
+        progress.value = completed;
+
+        if (completed === checkboxes.length) {
+            statusText.textContent =
+                "任務完成！今天的好習慣，明天繼續！";
+        } else {
+            statusText.textContent =
+                `今日完成 ${completed} / ${checkboxes.length} 項生活行動`;
+        }
+
+        // 記錄只保存在目前的瀏覽器
+        try {
+            localStorage.setItem(
+                storageKey,
+                JSON.stringify(
+                    checkboxes.map(checkbox => checkbox.checked)
+                )
+            );
+        } catch {
+            // 瀏覽器不允許儲存時，不影響進度功能
+        }
+    }
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", updateProgress);
+    });
+
+    resetButton.addEventListener("click", () => {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        });
+
+        updateProgress();
+    });
+
+    updateProgress();
+}

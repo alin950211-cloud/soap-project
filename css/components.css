@@ -1,0 +1,337 @@
+/* 網站名稱與問號磚塊 */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #202637;
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.brand span {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 3px solid #202637;
+    background: #ffcf47;
+    box-shadow: 3px 3px 0 #b96d20;
+    font-family: monospace;
+    font-size: 26px;
+}
+
+/* 上方導覽列 */
+.nav a {
+    padding: 6px 9px;
+    border: 2px solid transparent;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav a[aria-current="page"] {
+    border-color: #202637;
+    background: #f6cc45;
+    box-shadow: 3px 3px 0 #202637;
+}
+
+/* 側邊欄目前頁面 */
+.sidebar a[aria-current="page"] {
+    background: #f6cc45;
+    color: #202637;
+    font-weight: 900;
+    box-shadow: 3px 3px 0 #202637;
+}
+
+.side-links a::before {
+    content: "▸ ";
+    color: #a33b21;
+}
+
+/* 遊戲按鈕 */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border: 3px solid #202637;
+    background: #cf3d32;
+    color: white;
+    font-weight: 900;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #202637;
+    transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #202637;
+}
+
+.button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 #202637;
+}
+
+.button.secondary {
+    background: #ffe49a;
+    color: #202637;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 26px 0;
+}
+
+/* 首頁小標籤 */
+.tag {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 4px 12px;
+    border: 3px solid #202637;
+    background: #fff9e7;
+    box-shadow: 3px 3px 0 #202637;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+/* 圖片與圖片說明 */
+.art {
+    position: relative;
+}
+
+.art figure {
+    margin: 0;
+}
+
+.art img {
+    width: 100%;
+    border: 4px solid #202637;
+    box-shadow: 6px 6px 0 #202637;
+}
+
+.art figcaption {
+    margin-top: 12px;
+    color: #24364d;
+    font-size: 0.75rem;
+}
+
+/* 內容卡片 */
+.card {
+    padding: 23px;
+    border: 3px solid #202637;
+    background: #fff0bf;
+    box-shadow: 4px 4px 0 #d5ad5e;
+}
+
+.card .number {
+    color: #8b340f;
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* 核心理唸文字 */
+.quote {
+    margin: 0;
+    padding: 30px;
+    border: 4px solid #202637;
+    background: #ffd34e;
+    color: #202637;
+    box-shadow: 5px 5px 0 #b77828;
+    font-size: clamp(1.3rem, 2.6vw, 2rem);
+    font-weight: 900;
+    line-height: 1.65;
+}
+
+.quote p {
+    margin: 0;
+    color: inherit;
+}
+
+/* 影片播放器 */
+.video {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 5px solid #202637;
+    background: #202637;
+    box-shadow: 6px 6px 0 #202637;
+}
+
+.video iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 上下頁按鈕 */
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 30px;
+    padding: 24px;
+    border: 3px solid #202637;
+    background: #fff8dc;
+    box-shadow: 4px 4px 0 #202637;
+}
+
+.pagination a {
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* 綠色分類標籤 */
+.pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border: 2px solid #202637;
+    background: #258039;
+    color: white;
+    font-size: 0.75rem;
+}
+
+/* 遊戲狀態列 */
+.game-hud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding: 12px 18px;
+    border: 3px solid #202637;
+    background: #202637;
+    color: #fff9e7;
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.game-hud .coin {
+    color: #ffd34e;
+}
+
+/* 關卡選擇方塊 */
+.level-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.level-strip a {
+    display: grid;
+    place-items: center;
+    min-width: 42px;
+    min-height: 42px;
+    padding: 4px;
+    border: 3px solid #202637;
+    background: #ffcc43;
+    color: #202637;
+    box-shadow: 3px 3px 0 #202637;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.level-strip a[aria-current="page"] {
+    background: #cf3d32;
+    color: white;
+}
+
+.level-strip a:hover {
+    background: #fff9e7;
+    color: #202637;
+}
+
+/* 生活任務勾選 */
+.checklist {
+    display: grid;
+    gap: 14px;
+}
+
+.checklist label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    border: 3px solid #202637;
+    background: #fff0bf;
+    cursor: pointer;
+}
+
+.checklist label:has(input:checked) {
+    background: #d8edb8;
+}
+
+.checklist input {
+    width: 23px;
+    height: 23px;
+    flex-shrink: 0;
+    accent-color: #258039;
+}
+
+.meter {
+    width: 100%;
+    height: 20px;
+    accent-color: #258039;
+}
+
+/* 補充資訊 */
+.notice {
+    padding: 16px 20px;
+    border: 3px dashed #9b641c;
+    background: #fff0bf;
+    font-size: 0.9rem;
+}
+
+.fact {
+    margin: 24px 0;
+    padding: 3px 0 3px 18px;
+    border-left: 4px solid #cf3d32;
+}
+
+/* 常見問題 */
+.faq {
+    padding: 20px 0;
+    border-bottom: 3px dashed #d7b46f;
+}
+
+.faq summary {
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.faq p {
+    margin: 15px 0 0;
+}
+
+/* 組員與指導老師名單 */
+.name-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.name-list li {
+    line-height: 1.8;
+}

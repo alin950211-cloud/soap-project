@@ -1,0 +1,132 @@
+/* 讓元素寬度包含內距與框線 */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 藍天背景與像素格線 */
+body {
+    margin: 0;
+    background-color: #78c9f2;
+    background-image:
+        linear-gradient(#ffffff22 1px, transparent 1px),
+        linear-gradient(90deg, #ffffff22 1px, transparent 1px);
+    background-size: 32px 32px;
+
+    color: #202637;
+    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.85;
+}
+
+a {
+    color: inherit;
+    text-underline-offset: 5px;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+/* 首頁大標題 */
+h1 {
+    font-size: clamp(2.6rem, 5vw, 5.1rem);
+    line-height: 1.22;
+    letter-spacing: 0.015em;
+    font-weight: 900;
+    text-shadow: 3px 3px 0 #fff5cd;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.45;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
+p {
+    color: #354356;
+}
+
+/* 鍵盤操作時顯示焦點 */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+    outline: 4px dashed #842e05;
+    outline-offset: 5px;
+}
+
+::selection {
+    background: #ffdc55;
+}
+
+/* 跳至主要內容的無障礙連結 */
+.skip {
+    position: absolute;
+    left: 12px;
+    top: -100px;
+    z-index: 9;
+    padding: 10px;
+    background: white;
+}
+
+.skip:focus {
+    top: 8px;
+}
+
+/* 小標題 */
+.eyebrow {
+    font-family: monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #8b340f;
+}
+
+/* 補充文字 */
+.muted {
+    font-size: 0.86rem;
+    color: #44536a;
+}
+
+/* 紅色重點文字 */
+.accent {
+    color: #c3352d;
+    text-shadow: 3px 3px 0 #ffe28a;
+}
+
+/* 簡介文字 */
+.lead {
+    font-size: 1.13rem;
+    max-width: 36em;
+}
+
+/* 只供螢幕閱讀器讀取 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}

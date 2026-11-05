@@ -1,0 +1,175 @@
+/* 頁首與導覽列 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 20px 4vw;
+    border-bottom: 4px solid #202637;
+    background: #fff9e7;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Grid：側邊欄＋主要內容 */
+.shell {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 32px;
+    max-width: 1480px;
+    margin: auto;
+    padding: 36px 4vw 65px;
+}
+
+/* 側邊欄 */
+.sidebar {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+    padding: 20px 16px;
+    border: 4px solid #202637;
+    background: #fff8db;
+    box-shadow: 6px 6px 0 #202637;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.sidebar .note {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 3px dashed #d7b46f;
+}
+
+main {
+    min-width: 0;
+}
+
+/* 首頁：文字與圖片雙欄 */
+.hero {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    align-items: center;
+    gap: 30px;
+    padding: 24px 0 40px;
+}
+
+/* 三欄內容卡片 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* 雙欄內容 */
+.split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* 每個內容區塊 */
+.section {
+    margin: 28px 0;
+    padding: 35px 28px;
+    border: 4px solid #202637;
+    background: #fff9e7;
+    box-shadow: 6px 6px 0 #202637;
+}
+
+/* 分頁標題區 */
+.page-head {
+    padding: 28px;
+    border: 4px solid #202637;
+    background: #fff9e7;
+    box-shadow: 6px 6px 0 #202637;
+}
+
+.page-head h1 {
+    font-size: clamp(2.5rem, 5vw, 4.3rem);
+}
+
+/* 故事流程 */
+.flow {
+    counter-reset: steps;
+}
+
+.flow article {
+    display: grid;
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 3px dashed #d7b46f;
+}
+
+.flow article:last-child {
+    border-bottom: 0;
+}
+
+.flow article::before {
+    counter-increment: steps;
+    content: "0" counter(steps);
+    display: grid;
+    place-items: center;
+    height: 56px;
+    border: 3px solid #202637;
+    background: #ffcd46;
+    font-family: monospace;
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+/* 頁尾：草地與磚塊地面 */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1600px;
+    margin: auto;
+    padding: 26px 4vw;
+    border-top: 8px solid #299145;
+    color: #fff9e7;
+    background-color: #a75d2d;
+    background-image:
+        linear-gradient(90deg, transparent 95%, #6d371b 95%),
+        linear-gradient(transparent 93%, #6d371b 93%);
+    background-size: 64px 32px;
+    box-shadow: inset 0 4px 0 #72cd4b;
+}
+
+.footer .muted {
+    color: #fff9e7;
+}
+
+/* 手機與平板先切換成單欄，避免內容擠在一起 */
+@media (max-width: 900px) {
+    .shell,
+    .hero,
+    .grid,
+    .split {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .side-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+}
